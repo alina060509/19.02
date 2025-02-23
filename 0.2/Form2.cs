@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _0._2
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
         }
@@ -59,13 +59,13 @@ namespace _0._2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string priority = radioLow.Checked ? "Низкий" : (radioMedum.Checked ? "Средний" : "Высокий");
-            string status = checkBoxCompleted.Checked ? @"[\/] Выполнено" : "В процессе!";
+            string priority = radioLow.Checked ? "Отдых" : (radioMedum.Checked ? "Учеба" : "Работа");
+            string status = checkBoxCompleted.Checked ? @"Дело выполнено" : "В процессе(";
             string startDate = dateTimePicker1.Value.ToShortDateString();
             string dateline = monthCalendar.SelectionStart.ToShortDateString();
             string name = textBoxName.Text;
 
-            string task = $"Задача:{name}: {status} | Приоритет: {priority} | {startDate} => {dateline}";
+            string task = $"Задача:{name}: {status} | Категория: {priority} | {startDate} => {dateline}";
             listBoxTasks.Items.Add(task);
         }
 
@@ -77,6 +77,23 @@ namespace _0._2
         private void textBoxName_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioLow_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (listBoxTasks.SelectedIndex != -1)
+            {
+                listBoxTasks.Items.RemoveAt(listBoxTasks.SelectedIndex);
+            }
+            else
+            {
+                MessageBox.Show("Выберите задачу для удаления.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

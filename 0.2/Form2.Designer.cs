@@ -1,7 +1,7 @@
 ﻿
 namespace _0._2
 {
-    partial class Form1
+    partial class Form2
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -43,6 +43,7 @@ namespace _0._2
             this.buttonAddTask = new System.Windows.Forms.Button();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LabelPriority
@@ -50,9 +51,9 @@ namespace _0._2
             this.LabelPriority.AutoSize = true;
             this.LabelPriority.Location = new System.Drawing.Point(12, 43);
             this.LabelPriority.Name = "LabelPriority";
-            this.LabelPriority.Size = new System.Drawing.Size(64, 13);
+            this.LabelPriority.Size = new System.Drawing.Size(63, 13);
             this.LabelPriority.TabIndex = 0;
-            this.LabelPriority.Text = "Приоритет:";
+            this.LabelPriority.Text = "Категория:";
             this.LabelPriority.Click += new System.EventHandler(this.LabelPriority_Click);
             // 
             // radioLow
@@ -60,21 +61,22 @@ namespace _0._2
             this.radioLow.AutoSize = true;
             this.radioLow.Location = new System.Drawing.Point(15, 69);
             this.radioLow.Name = "radioLow";
-            this.radioLow.Size = new System.Drawing.Size(63, 17);
+            this.radioLow.Size = new System.Drawing.Size(57, 17);
             this.radioLow.TabIndex = 1;
             this.radioLow.TabStop = true;
-            this.radioLow.Text = "Низкий";
+            this.radioLow.Text = "Отдых";
             this.radioLow.UseVisualStyleBackColor = true;
+            this.radioLow.CheckedChanged += new System.EventHandler(this.radioLow_CheckedChanged);
             // 
             // radioMedum
             // 
             this.radioMedum.AutoSize = true;
             this.radioMedum.Location = new System.Drawing.Point(84, 69);
             this.radioMedum.Name = "radioMedum";
-            this.radioMedum.Size = new System.Drawing.Size(68, 17);
+            this.radioMedum.Size = new System.Drawing.Size(56, 17);
             this.radioMedum.TabIndex = 2;
             this.radioMedum.TabStop = true;
-            this.radioMedum.Text = "Средний";
+            this.radioMedum.Text = "Учеба";
             this.radioMedum.UseVisualStyleBackColor = true;
             this.radioMedum.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
@@ -83,10 +85,10 @@ namespace _0._2
             this.radioHight.AutoSize = true;
             this.radioHight.Location = new System.Drawing.Point(158, 69);
             this.radioHight.Name = "radioHight";
-            this.radioHight.Size = new System.Drawing.Size(70, 17);
+            this.radioHight.Size = new System.Drawing.Size(61, 17);
             this.radioHight.TabIndex = 3;
             this.radioHight.TabStop = true;
-            this.radioHight.Text = "Высокий";
+            this.radioHight.Text = "Работа";
             this.radioHight.UseVisualStyleBackColor = true;
             this.radioHight.CheckedChanged += new System.EventHandler(this.radioHight_CheckedChanged);
             // 
@@ -105,9 +107,9 @@ namespace _0._2
             this.checkBoxCompleted.AutoSize = true;
             this.checkBoxCompleted.Location = new System.Drawing.Point(68, 345);
             this.checkBoxCompleted.Name = "checkBoxCompleted";
-            this.checkBoxCompleted.Size = new System.Drawing.Size(123, 17);
+            this.checkBoxCompleted.Size = new System.Drawing.Size(112, 17);
             this.checkBoxCompleted.TabIndex = 5;
-            this.checkBoxCompleted.Text = "задача выполнена!";
+            this.checkBoxCompleted.Text = "Дело выполнено";
             this.checkBoxCompleted.UseVisualStyleBackColor = true;
             this.checkBoxCompleted.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -166,7 +168,7 @@ namespace _0._2
             // 
             // textBoxName
             // 
-            this.textBoxName.Location = new System.Drawing.Point(116, 10);
+            this.textBoxName.Location = new System.Drawing.Point(55, 10);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(100, 20);
             this.textBoxName.TabIndex = 12;
@@ -177,15 +179,26 @@ namespace _0._2
             this.labelName.AutoSize = true;
             this.labelName.Location = new System.Drawing.Point(12, 13);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(98, 13);
+            this.labelName.Size = new System.Drawing.Size(37, 13);
             this.labelName.TabIndex = 13;
-            this.labelName.Text = "Название задачи:";
+            this.labelName.Text = "Дело:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(384, 396);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(170, 63);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "Удалить задачу!";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 474);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.buttonAddTask);
@@ -223,6 +236,7 @@ namespace _0._2
         private System.Windows.Forms.Button buttonAddTask;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Button button1;
     }
 }
 
